@@ -4,7 +4,7 @@ export default function Layout() {
   const token = "token";
 
   if (!token) {
-    return <Navigate to="/auth/login" />;
+    return <Navigate to="/auth/login" replace />;
   }
 
   return (
