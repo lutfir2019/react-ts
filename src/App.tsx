@@ -11,7 +11,7 @@ function App() {
       element: <Layout />, // Layout sebagai wrapper
       children: [
         {
-          path: "home",
+          path: "/",
           element: <Home />,
         },
         {
