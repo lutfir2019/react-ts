@@ -11,12 +11,25 @@ function App() {
       element: <Layout />, // Layout sebagai wrapper
       children: [
         {
-          path: "/",
+          index: true,
           element: <Home />,
         },
         {
           path: "blog",
           element: <Blog />,
+        },
+      ],
+    },
+    {
+      path: "auth",
+      children: [
+        {
+          path: "login",
+          element: <div>Login Page</div>,
+        },
+        {
+          path: "register",
+          element: <div>Register Page</div>,
         },
       ],
     },
