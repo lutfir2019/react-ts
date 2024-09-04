@@ -18,11 +18,11 @@ function App() {
           path: "blog",
           element: <Blog />,
         },
-        {
-          path: "*",
-          element: <div>404 - Page Not Found</div>,
-        },
       ],
+    },
+    {
+      path: "*",
+      element: <div>404 - Page Not Found</div>,
     },
   ]);
 
