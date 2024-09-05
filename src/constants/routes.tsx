@@ -1,7 +1,7 @@
+import Blog from "@/pages/Blog";
+import Home from "@/pages/Home";
+import Layout from "@/components/layout/Layout";
 import { Navigate, RouteObject } from "react-router-dom";
-import Home from "../pages/Home";
-import Blog from "../pages/Blog";
-import Layout from "../components/layout/Layout";
 
 export const main: RouteObject[] = [
   {

@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../features/store";
+import { RootState } from "@/features/store";
 import {
   decrement,
   increment,
   incrementByAmount,
   reset,
-} from "../features/counter/useCounter";
+} from "@/features/counter/useCounter";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const count = useSelector((state: RootState) => state.useCounter.value);
@@ -28,18 +29,22 @@ export default function Home() {
     <div>
       <span>{count}</span>
       <div className="flex gap-2">
-        <button type="button" className="bg-green-500 rounded p-2 text-white" onClick={handleIncrement}>
+        <Button type="button" onClick={handleIncrement}>
           increment
-        </button>
-        <button type="button" className="bg-red-500 rounded p-2 text-white" onClick={handleDecrement}>
+        </Button>
+        <Button type="button" variant="destructive" onClick={handleDecrement}>
           decrement
-        </button>
-        <button type="button" className="bg-blue-500 rounded p-2 text-white" onClick={handleReset}>
+        </Button>
+        <Button type="button" variant="secondary" onClick={handleReset}>
           reset
-        </button>
-        <button type="button" className="bg-yellow-500 rounded p-2 text-white" onClick={handleIncrementByAmount}>
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={handleIncrementByAmount}
+        >
           incrementByAmount
-        </button>
+        </Button>
       </div>
     </div>
   );
