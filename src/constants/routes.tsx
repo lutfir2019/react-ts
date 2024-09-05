@@ -3,6 +3,7 @@ import Home from "@/pages/Home";
 import Layout from "@/components/layout/Layout";
 import { Navigate, RouteObject } from "react-router-dom";
 import Auth from "@/pages/Auth";
+import NotFound from "@/pages/NotFound";
 
 export const main: RouteObject[] = [
   {
@@ -45,6 +46,6 @@ export const routes: RouteObject[] = [
   // not found page
   {
     path: "*",
-    element: <div>404 - Page Not Found</div>,
+    element: <NotFound />,
   },
 ];
