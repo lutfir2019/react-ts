@@ -1,8 +1,21 @@
-import { Outlet, Link, Navigate } from "react-router-dom";
+import { Outlet, Link, useNavigate, Navigate } from "react-router-dom";
+import { getToken, logout } from "@/features/auth/useAuth";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "../ui/button";
+import { RootState } from "@/features/store";
 
 export default function Layout() {
-  const token = "token";
+  const { token } = useSelector((state: RootState) => state.useAuth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
+  function handleLogout() {
+    dispatch(logout());
+    return navigate("/auth/login", { replace: true });
+  }
 
+  // middleware
+  dispatch(getToken());
   if (!token) {
     return <Navigate to="/auth/login" replace />;
   }
@@ -20,6 +33,11 @@ export default function Layout() {
             </li>
             <li>
               <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Button variant="secondary" onClick={handleLogout}>
+                Logout
+              </Button>
             </li>
           </ul>
         </nav>

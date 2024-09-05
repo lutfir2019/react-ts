@@ -2,6 +2,7 @@ import Blog from "@/pages/Blog";
 import Home from "@/pages/Home";
 import Layout from "@/components/layout/Layout";
 import { Navigate, RouteObject } from "react-router-dom";
+import Auth from "@/pages/Auth";
 
 export const main: RouteObject[] = [
   {
@@ -21,7 +22,7 @@ const auth: RouteObject[] = [
   },
   {
     path: "login",
-    element: <div>Login Page</div>,
+    element: <Auth />,
   },
   {
     path: "register",
