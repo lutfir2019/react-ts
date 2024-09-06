@@ -24,7 +24,7 @@ export default function Layout() {
     <div>
       <header>
         <nav>
-          <ul>
+          <ul className="flex justify-center gap-3 items-center">
             <li>
               <Link to="/">Home</Link>
             </li>
